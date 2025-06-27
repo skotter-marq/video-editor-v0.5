@@ -1,0 +1,18 @@
+# Changelog
+
+## [0.5.0] - 2025-01-XX
+
+### Added
+- Video upload and library management
+- Interactive timeline with zoom and scrubbing
+- Real-time canvas preview
+- Properties panel with transform, effects, and audio controls
+- Export simulation with progress tracking
+- Undo/redo system with keyboard shortcuts
+- Responsive design for all screen sizes
+
+### Technical
+- React 18 + TypeScript implementation
+- Tailwind CSS design system
+- Radix UI component library
+- HTML5 video processing
