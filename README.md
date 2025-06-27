@@ -1,48 +1,51 @@
-Video Template Editor V0.5
+# Video Template Editor V0.5
+
 A modern, browser-based video template editor built with React and TypeScript. This application enables Template Admins to create video-based templates and provides End Users with tools to customize them for social media content creation.
-🎯 Project Overview
-Problem Statement
+
+## 🎯 Project Overview
+
+### Problem Statement
 Businesses need to create dynamic video content for social media platforms, but current tools either lack brand control (like Canva) or require complex technical skills. This editor bridges that gap by providing template-based video creation with built-in brand consistency.
-Key Benefits
 
-Brand Control: Maintain consistent brand presentation across all video content
-Workflow Efficiency: Unified platform for both static and video content creation
-User-Friendly: Intuitive interface for users without video editing experience
-Template-Based: Reusable templates ensure brand guidelines compliance
+### Key Benefits
+- **Brand Control**: Maintain consistent brand presentation across all video content
+- **Workflow Efficiency**: Unified platform for both static and video content creation
+- **User-Friendly**: Intuitive interface for users without video editing experience
+- **Template-Based**: Reusable templates ensure brand guidelines compliance
 
-✨ Features
-V0.5 Core Features (Current Release)
+## ✨ Features
 
-✅ Video Upload & Management: Drag-and-drop video file uploads with thumbnail generation
-✅ Canvas Preview: Real-time video preview with project size selection
-✅ Video Editing Controls: Speed adjustment, audio mute/unmute, basic transformations
-✅ Timeline Interface: Interactive timeline with scrubbing, trimming, and zoom controls
-✅ Project Management: Multiple project sizes optimized for social media platforms
-✅ Export Simulation: MP4 export workflow with progress tracking
-✅ Undo/Redo System: Full action history with keyboard shortcuts
-✅ Responsive Design: Works on desktop, tablet, and mobile devices
+### V0.5 Core Features (Current Release)
+- ✅ **Video Upload & Management**: Drag-and-drop video file uploads with thumbnail generation
+- ✅ **Canvas Preview**: Real-time video preview with project size selection
+- ✅ **Video Editing Controls**: Speed adjustment, audio mute/unmute, basic transformations
+- ✅ **Timeline Interface**: Interactive timeline with scrubbing, trimming, and zoom controls
+- ✅ **Project Management**: Multiple project sizes optimized for social media platforms
+- ✅ **Export Simulation**: MP4 export workflow with progress tracking
+- ✅ **Undo/Redo System**: Full action history with keyboard shortcuts
+- ✅ **Responsive Design**: Works on desktop, tablet, and mobile devices
 
-Supported Project Formats
+### Supported Project Formats
+- **16:9 (1920×1080)** - Standard landscape/YouTube
+- **9:16 (1080×1920)** - Instagram Stories/TikTok
+- **1:1 (1080×1080)** - Instagram Posts
+- **4:3 (1440×1080)** - Traditional TV format
+- **21:9 (2560×1080)** - Ultrawide
+- **5:4 (1350×1080)** - Portrait alternative
+- **Custom dimensions** - User-defined sizes
 
-16:9 (1920×1080) - Standard landscape/YouTube
-9:16 (1080×1920) - Instagram Stories/TikTok
-1:1 (1080×1080) - Instagram Posts
-4:3 (1440×1080) - Traditional TV format
-21:9 (2560×1080) - Ultrawide
-5:4 (1350×1080) - Portrait alternative
-Custom dimensions - User-defined sizes
+## 🏗️ Architecture
 
-🏗️ Architecture
-Tech Stack
+### Tech Stack
+- **Frontend**: React 18 with TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: Radix UI primitives with custom styling
+- **State Management**: React hooks (useState, useContext)
+- **Video Processing**: HTML5 Video API with canvas manipulation
+- **Build Tool**: Vite with TypeScript support
 
-Frontend: React 18 with TypeScript
-Styling: Tailwind CSS with custom design system
-UI Components: Radix UI primitives with custom styling
-State Management: React hooks (useState, useContext)
-Video Processing: HTML5 Video API with canvas manipulation
-Build Tool: Vite with TypeScript support
-
-Project Structure
+### Project Structure
+```
 src/
 ├── components/
 │   ├── ui/                    # Reusable UI components (Radix + Tailwind)
@@ -57,45 +60,45 @@ src/
 ├── styles/
 │   └── globals.css           # Global styles and CSS variables
 └── App.tsx                   # Main application component
-Key Components
-VideoUploader
+```
 
-Handles drag-and-drop file uploads
-Generates video thumbnails using Canvas API
-Manages video library with metadata
-Supports multiple video formats (MP4, MOV, WebM)
+### Key Components
 
-VideoCanvas
+#### VideoUploader
+- Handles drag-and-drop file uploads
+- Generates video thumbnails using Canvas API
+- Manages video library with metadata
+- Supports multiple video formats (MP4, MOV, WebM)
 
-Real-time video preview with HTML5 video element
-Project size visualization and aspect ratio handling
-Playback controls with overlay interface
-Transform preview (scale, rotation, position)
+#### VideoCanvas
+- Real-time video preview with HTML5 video element
+- Project size visualization and aspect ratio handling
+- Playback controls with overlay interface
+- Transform preview (scale, rotation, position)
 
-VideoTimeline
+#### VideoTimeline
+- Interactive timeline with zoom capabilities (25% - 175%)
+- Video clip visualization with thumbnail backgrounds
+- Trim handles for precise editing
+- Playhead scrubbing with auto-scroll during playback
+- Drag-and-drop support for adding videos
 
-Interactive timeline with zoom capabilities (25% - 175%)
-Video clip visualization with thumbnail backgrounds
-Trim handles for precise editing
-Playhead scrubbing with auto-scroll during playback
-Drag-and-drop support for adding videos
+#### PropertiesPanel
+- Tabbed interface (Transform, Effects, Audio)
+- Real-time property adjustment with sliders
+- Reset-to-default functionality with visual indicators
+- Speed control with automatic duration calculation
 
-PropertiesPanel
+## 🚀 Getting Started
 
-Tabbed interface (Transform, Effects, Audio)
-Real-time property adjustment with sliders
-Reset-to-default functionality with visual indicators
-Speed control with automatic duration calculation
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn package manager
+- Modern web browser with HTML5 video support
 
-🚀 Getting Started
-Prerequisites
-
-Node.js 18+
-npm or yarn package manager
-Modern web browser with HTML5 video support
-
-Installation
-bash# Clone the repository
+### Installation
+```bash
+# Clone the repository
 git clone <your-repo-url>
 cd video-template-editor
 
@@ -106,55 +109,60 @@ npm install
 npm run dev
 
 # Open browser to http://localhost:3000
-Development Commands
-bashnpm run dev          # Start development server
+```
+
+### Development Commands
+```bash
+npm run dev          # Start development server
 npm run build        # Build for production
 npm run preview      # Preview production build
 npm run lint         # Run ESLint
 npm run type-check   # Run TypeScript type checking
-📖 User Guide
-For Template Admins
-Creating a New Project
+```
 
-Select Project Size: Choose from preset social media formats or create custom dimensions
-Upload Videos: Drag and drop video files into the upload area
-Add to Timeline: Drag videos from the library to the timeline
-Configure Properties: Use the properties panel to adjust video settings
-Preview & Export: Preview your template and export as MP4
+## 📖 User Guide
 
-Video Library Management
+### For Template Admins
 
-Upload: Drag files or click to browse (supports MP4, MOV, WebM)
-Preview: Hover over thumbnails to see video details
-Add to Timeline: Drag videos or click the + button
-Status Indicators: See which videos are already on the timeline
+#### Creating a New Project
+1. **Select Project Size**: Choose from preset social media formats or create custom dimensions
+2. **Upload Videos**: Drag and drop video files into the upload area
+3. **Add to Timeline**: Drag videos from the library to the timeline
+4. **Configure Properties**: Use the properties panel to adjust video settings
+5. **Preview & Export**: Preview your template and export as MP4
 
-Timeline Editing
+#### Video Library Management
+- **Upload**: Drag files or click to browse (supports MP4, MOV, WebM)
+- **Preview**: Hover over thumbnails to see video details
+- **Add to Timeline**: Drag videos or click the + button
+- **Status Indicators**: See which videos are already on the timeline
 
-Scrubbing: Click anywhere on the timeline to jump to that time
-Trimming: Drag the left/right handles on video clips to trim
-Moving: Drag video clips to reposition them
-Zooming: Use the zoom slider (25% - 175%) for precise editing
+#### Timeline Editing
+- **Scrubbing**: Click anywhere on the timeline to jump to that time
+- **Trimming**: Drag the left/right handles on video clips to trim
+- **Moving**: Drag video clips to reposition them
+- **Zooming**: Use the zoom slider (25% - 175%) for precise editing
 
-Property Controls
+#### Property Controls
+- **Transform Tab**: Position (X/Y), Scale, Rotation, Opacity, Speed
+- **Effects Tab**: Brightness, Contrast, Saturation, Hue adjustment
+- **Audio Tab**: Volume control and mute toggle
+- **Reset Options**: Click reset button next to any modified property
 
-Transform Tab: Position (X/Y), Scale, Rotation, Opacity, Speed
-Effects Tab: Brightness, Contrast, Saturation, Hue adjustment
-Audio Tab: Volume control and mute toggle
-Reset Options: Click reset button next to any modified property
+### Keyboard Shortcuts
+- **Space**: Play/Pause video
+- **Ctrl/Cmd + Z**: Undo last action
+- **Ctrl/Cmd + Shift + Z**: Redo action
+- **Ctrl/Cmd + Y**: Alternative redo
+- **Ctrl/Cmd + S**: Save project
 
-Keyboard Shortcuts
+## 🔧 Technical Implementation
 
-Space: Play/Pause video
-Ctrl/Cmd + Z: Undo last action
-Ctrl/Cmd + Shift + Z: Redo action
-Ctrl/Cmd + Y: Alternative redo
-Ctrl/Cmd + S: Save project
-
-🔧 Technical Implementation
-Video Processing
+### Video Processing
 The application uses browser-native APIs for video processing:
-typescript// Video thumbnail generation
+
+```typescript
+// Video thumbnail generation
 const generateVideoThumbnail = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
     const video = document.createElement('video');
@@ -175,9 +183,13 @@ const generateVideoThumbnail = (file: File): Promise<string> => {
     video.src = URL.createObjectURL(file);
   });
 };
-State Management
+```
+
+### State Management
 The application uses React's built-in state management:
-typescript// Main project state
+
+```typescript
+// Main project state
 const [project, setProject] = useState<VideoProject>({
   id: 'project_1',
   name: 'Untitled Project',
@@ -193,9 +205,13 @@ const [project, setProject] = useState<VideoProject>({
 // Undo/Redo implementation
 const [undoStack, setUndoStack] = useState<VideoProject[]>([]);
 const [redoStack, setRedoStack] = useState<VideoProject[]>([]);
-Export System
+```
+
+### Export System
 The export system simulates video processing with realistic progress:
-typescriptconst handleExport = async () => {
+
+```typescript
+const handleExport = async () => {
   const stages = [
     'Preparing video timeline...',
     'Processing video clips...',
@@ -211,53 +227,58 @@ typescriptconst handleExport = async () => {
     setExportProgress(((i + 1) / stages.length) * 100);
   }
 };
-🎨 Design System
-Color Palette
-css:root {
+```
+
+## 🎨 Design System
+
+### Color Palette
+```css
+:root {
   --primary: #8B5CF6;        /* Purple - CTAs and active states */
   --secondary: #F8FAFC;      /* Light gray - backgrounds */
   --accent: #3B82F6;         /* Blue - timeline and interactive elements */
   --muted: #F3F4F6;          /* Subtle backgrounds */
   --border: rgba(0,0,0,0.1); /* Subtle borders */
 }
-Component Guidelines
+```
 
-Rounded corners: 6px standard, 12px for cards
-Spacing: 4px grid system (4, 8, 12, 16, 24, 32px)
-Typography: Inter font family with consistent hierarchy
-Shadows: Subtle for elevation, more pronounced for modals
-Animations: 200ms duration, ease-in-out timing
+### Component Guidelines
+- **Rounded corners**: 6px standard, 12px for cards
+- **Spacing**: 4px grid system (4, 8, 12, 16, 24, 32px)
+- **Typography**: Inter font family with consistent hierarchy
+- **Shadows**: Subtle for elevation, more pronounced for modals
+- **Animations**: 200ms duration, ease-in-out timing
 
-🧪 Testing
-Manual Testing Checklist
+## 🧪 Testing
 
- Video upload works with drag-and-drop and file picker
- Timeline accurately represents video duration and position
- Playback controls respond correctly (play, pause, scrub)
- Property changes update video in real-time
- Undo/redo works for all actions
- Export modal shows progress and completes successfully
- Responsive design works on different screen sizes
- Keyboard shortcuts function as expected
+### Manual Testing Checklist
+- [ ] Video upload works with drag-and-drop and file picker
+- [ ] Timeline accurately represents video duration and position
+- [ ] Playback controls respond correctly (play, pause, scrub)
+- [ ] Property changes update video in real-time
+- [ ] Undo/redo works for all actions
+- [ ] Export modal shows progress and completes successfully
+- [ ] Responsive design works on different screen sizes
+- [ ] Keyboard shortcuts function as expected
 
-Browser Compatibility
+### Browser Compatibility
+- ✅ Chrome 90+
+- ✅ Firefox 88+
+- ✅ Safari 14+
+- ✅ Edge 90+
 
-✅ Chrome 90+
-✅ Firefox 88+
-✅ Safari 14+
-✅ Edge 90+
+## 🛠️ Development Guidelines
 
-🛠️ Development Guidelines
-Code Style
+### Code Style
+- Use TypeScript for all new code
+- Follow React hooks patterns
+- Implement proper error boundaries
+- Use semantic HTML elements
+- Maintain accessibility standards (ARIA labels, keyboard navigation)
 
-Use TypeScript for all new code
-Follow React hooks patterns
-Implement proper error boundaries
-Use semantic HTML elements
-Maintain accessibility standards (ARIA labels, keyboard navigation)
-
-Component Structure
-typescriptinterface ComponentProps {
+### Component Structure
+```typescript
+interface ComponentProps {
   // Props interface
 }
 
@@ -282,36 +303,85 @@ export function Component({ prop1, prop2 }: ComponentProps) {
     </div>
   );
 }
-Performance Considerations
+```
 
-Use useCallback for event handlers
-Implement useMemo for expensive calculations
-Lazy load components when appropriate
-Optimize video file handling with proper cleanup
-Use proper React keys for list items
+### Performance Considerations
+- Use `useCallback` for event handlers
+- Implement `useMemo` for expensive calculations
+- Lazy load components when appropriate
+- Optimize video file handling with proper cleanup
+- Use proper React keys for list items
 
-🔮 Roadmap
-V1.0 Features (Months 4-6)
+## 🔮 Roadmap
 
-Multi-layer support: Text, objects, and video layers
-Multiple scenes: Page-based video creation
-Basic animations: Fade in/out, slide transitions
-Image integration: Static images with video content
-Brand Kit integration: Color palettes, fonts, logos
-Enhanced object controls: Advanced positioning and effects
+### V1.0 Features (Months 4-6)
+- **Multi-layer support**: Text, objects, and video layers
+- **Multiple scenes**: Page-based video creation
+- **Basic animations**: Fade in/out, slide transitions
+- **Image integration**: Static images with video content
+- **Brand Kit integration**: Color palettes, fonts, logos
+- **Enhanced object controls**: Advanced positioning and effects
 
-V1.5 Features (Months 7-9)
+### V1.5 Features (Months 7-9)
+- **Data automation**: Smart fields and dynamic content
+- **Audio track support**: Background music and voiceovers
+- **Image library integration**: Unsplash, DAM systems
+- **Revision history**: Version control and collaboration
+- **Advanced brand controls**: Style templates and guidelines
 
-Data automation: Smart fields and dynamic content
-Audio track support: Background music and voiceovers
-Image library integration: Unsplash, DAM systems
-Revision history: Version control and collaboration
-Advanced brand controls: Style templates and guidelines
+### V2.0 Vision (Future)
+- **AI-powered video generation**: Prompt-based video creation
+- **Automated transitions**: Smart scene connections
+- **Advanced brand applications**: Intelligent style suggestions
+- **Collaboration tools**: Real-time editing and comments
+- **Advanced export options**: Multiple formats and qualities
 
-V2.0 Vision (Future)
+## 🤝 Contributing
 
-AI-powered video generation: Prompt-based video creation
-Automated transitions: Smart scene connections
-Advanced brand applications: Intelligent style suggestions
-Collaboration tools: Real-time editing and comments
-Advanced export options: Multiple formats and qualities
+### Development Workflow
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes following the code style guidelines
+4. Test your changes thoroughly
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+### Bug Reports
+When reporting bugs, please include:
+- Browser and version
+- Steps to reproduce
+- Expected vs. actual behavior
+- Screenshots or video if applicable
+- Console errors (if any)
+
+### Feature Requests
+For new features, please provide:
+- Clear description of the feature
+- Use case and business value
+- Mockups or examples (if applicable)
+- Technical considerations
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Radix UI**: For accessible component primitives
+- **Tailwind CSS**: For utility-first styling
+- **Lucide**: For beautiful, consistent icons
+- **Unsplash**: For placeholder images and video thumbnails
+
+---
+
+## 📞 Support
+
+For questions, issues, or contributions:
+- **Issues**: [GitHub Issues](link-to-issues)
+- **Discussions**: [GitHub Discussions](link-to-discussions)
+- **Email**: [support@yourcompany.com](mailto:support@yourcompany.com)
+
+---
+
+**Built with ❤️ for modern video creation workflows**
