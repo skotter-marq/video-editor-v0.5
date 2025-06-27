@@ -1,0 +1,10 @@
+# Component API Reference
+
+## VideoUploader
+### Props
+- `onVideoUpload: (video: VideoAsset) => void`
+- `uploadedVideos: VideoAsset[]`
+- `onAddToTimeline?: (video: VideoAsset) => void`
+
+## VideoCanvas
+[Component documentation]
